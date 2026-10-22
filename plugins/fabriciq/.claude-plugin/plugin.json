@@ -1,6 +1,6 @@
 {
   "name": "fabriciq",
-  "displayName": "Fabric IQ",
+  "displayName": "Microsoft Fabric IQ",
   "version": "0.1.0",
   "description": "Ask questions about your Power BI reports and semantic models in Microsoft Fabric and get plain-language answers backed by your data.",
   "author": {

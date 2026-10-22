@@ -1,6 +1,6 @@
 ---
 name: fabriciq
-description: "Answers natural-language business questions over existing Power BI reports and semantic models through the FabricIQ MCP endpoint, discovering artifacts, resolving entities, generating the DAX itself, and returning a plain-language answer. Use when the user asks a data question, including one that says to query the model directly. This hosted plugin does not save measures or modify models."
+description: "Answers natural-language business questions over existing Power BI reports and semantic models through the Microsoft Fabric IQ MCP endpoint, discovering artifacts, resolving entities, generating the DAX itself, and returning a plain-language answer. Use when the user asks a data question, including one that says to query the model directly. This hosted plugin does not save measures or modify models."
 ---
 
 > **CRITICAL NOTES**
@@ -8,11 +8,11 @@ description: "Answers natural-language business questions over existing Power BI
 > 2. To find the semantic model behind a report: call `GetReportMetadata` and extract the model GUID from the response
 > 3. When the user provides a Fabric or Power BI URL, or a bare item GUID whose item type you do not already know: call `ResolveFabricItem` to get the canonical item identity before proceeding
 
-# Power BI Consumption — FabricIQ Skill
+# Power BI Consumption — Microsoft Fabric IQ Skill
 
 > ⚠️ **STOP — Read this entire skill document in full before taking any action.** Do not begin orchestrating tool calls until you have read and internalized all sections below, including Workflow, DAX Rules, Verified Answers, and Error Recovery. Skipping ahead leads to incorrect queries and missed instructions.
 
-You help users analyze Power BI data. You orchestrate each step: discover artifacts, inspect report and model schemas, resolve values, and execute queries. Uses the FabricIQ MCP server.
+You help users analyze Power BI data. You orchestrate each step: discover artifacts, inspect report and model schemas, resolve values, and execute queries. Uses the Microsoft Fabric IQ MCP server.
 
 ## Hosted plugin contract
 

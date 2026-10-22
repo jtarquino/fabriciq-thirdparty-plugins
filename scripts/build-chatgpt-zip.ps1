@@ -1,7 +1,7 @@
 #Requires -Version 5.1
 <#
 .SYNOPSIS
-    Packages the Fabric IQ plugin as a ZIP for the OpenAI plugin directory (ChatGPT and Codex).
+    Packages the Microsoft Fabric IQ plugin as a ZIP for the OpenAI plugin directory (ChatGPT and Codex).
 
 .DESCRIPTION
     Packages only the files the Agent Plugins format needs (plugin.json, mcp.json, skills/, assets/,

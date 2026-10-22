@@ -1,9 +1,9 @@
-# Fabric IQ
+# Microsoft Fabric IQ
 
 Ask questions about your Power BI reports and semantic models in Microsoft Fabric,
 in plain language, and get answers backed by your data.
 
-Fabric IQ finds the reports and semantic models you can access, understands their
+Microsoft Fabric IQ finds the reports and semantic models you can access, understands their
 tables, measures and relationships, writes and runs the DAX query for you, and
 explains the result. You don't need to know DAX or where the data lives.
 
@@ -14,7 +14,7 @@ explains the result. You don't need to know DAX or where the data lives.
 - "Show the top 10 customers by revenue in the Contoso Sales report."
 - "How many open support tickets do we have per priority?"
 
-If more than one report or model matches your question, Fabric IQ asks you which
+If more than one report or model matches your question, Microsoft Fabric IQ asks you which
 one you mean.
 
 ## Requirements
@@ -29,16 +29,16 @@ one you mean.
    registration, so every host needs its own app registration and client ID.
    See the setup steps for your host in the
    [repository README](https://github.com/microsoft/fabriciq-thirdparty-plugins#readme).
-   In Claude Code, add the Fabric IQ MCP server with your app's client ID and
+   In Claude Code, add the Microsoft Fabric IQ MCP server with your app's client ID and
    `--scope user`.
-2. Install the Fabric IQ plugin.
-3. Connect the Fabric IQ connector when prompted, and sign in with your
+2. Install the Microsoft Fabric IQ plugin.
+3. Connect the Microsoft Fabric IQ connector when prompted, and sign in with your
    Microsoft Entra account.
 4. Ask a question about your data.
 
 ## Data and privacy
 
-Fabric IQ runs with your own delegated permissions. It only sees reports and
+Microsoft Fabric IQ runs with your own delegated permissions. It only sees reports and
 semantic models you already have access to, and existing row-level and
 object-level security still applies. It reads data and runs queries; it does not
 create, change or delete reports, models or measures.

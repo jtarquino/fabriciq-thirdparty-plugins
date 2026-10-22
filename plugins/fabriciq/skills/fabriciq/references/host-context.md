@@ -1,4 +1,4 @@
-# Hosted Fabric IQ connection
+# Hosted Microsoft Fabric IQ connection
 
 ## Fabric topology and finding artifacts
 

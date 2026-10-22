@@ -14,9 +14,9 @@
   "extensions": {
     "com.openai": {
       "interface": {
-        "displayName": "Fabric IQ",
+        "displayName": "Microsoft Fabric IQ",
         "shortDescription": "Ask questions about Power BI",
-        "longDescription": "Fabric IQ finds the Power BI reports and semantic models you can access in Microsoft Fabric, reads their tables, measures and relationships, writes and runs the DAX query for you, and explains the result in plain language. It runs with your own delegated permissions, respects row-level and object-level security, and is read-only: it never creates, changes or deletes reports, models or measures.",
+        "longDescription": "Microsoft Fabric IQ finds the Power BI reports and semantic models you can access in Microsoft Fabric, reads their tables, measures and relationships, writes and runs the DAX query for you, and explains the result in plain language. It runs with your own delegated permissions, respects row-level and object-level security, and is read-only: it never creates, changes or deletes reports, models or measures.",
         "developerName": "Microsoft",
         "category": "Productivity",
         "capabilities": [

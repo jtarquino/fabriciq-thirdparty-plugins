@@ -1,7 +1,7 @@
 {
   "name": "fabriciq",
   "interface": {
-    "displayName": "Fabric IQ"
+    "displayName": "Microsoft Fabric IQ"
   },
   "plugins": [
     {

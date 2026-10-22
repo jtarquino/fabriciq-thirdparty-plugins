@@ -1,10 +1,10 @@
-# Fabric IQ plugins for third-party AI assistants
+# Microsoft Fabric IQ plugins for third-party AI assistants
 
-This repository hosts the **Fabric IQ** plugin for third-party AI assistants:
+This repository hosts the **Microsoft Fabric IQ** plugin for third-party AI assistants:
 Claude and ChatGPT. Both hosts share one plugin folder and one skill; each host
 has its own manifest files.
 
-Fabric IQ connects your AI assistant to the Microsoft Fabric IQ remote MCP server,
+Microsoft Fabric IQ connects your AI assistant to the Microsoft Fabric IQ remote MCP server,
 so you can ask questions about your Power BI reports and semantic models in plain
 language and get answers backed by your data. See
 [plugins/fabriciq](plugins/fabriciq/README.md) for details.
@@ -23,7 +23,7 @@ language and get answers backed by your data. See
 - Your organization allows users to consent to the app, or a tenant administrator
   has granted admin consent. See [Admin consent](#admin-consent).
 
-Fabric IQ MCP server URL:
+Microsoft Fabric IQ MCP server URL:
 
 ```
 https://fabriciq.svc.cloud.microsoft/v1/mcp/fabriciq
@@ -48,7 +48,7 @@ an Entra app registration with a loopback redirect URI.
    ```
 
    Leave out `--client-secret` if the app is a public client.
-3. Optionally, install the plugin to add the Fabric IQ skill:
+3. Optionally, install the plugin to add the Microsoft Fabric IQ skill:
 
    ```
    /plugin marketplace add microsoft/fabriciq-thirdparty-plugins
@@ -69,7 +69,7 @@ once; each user then does steps 3-5.
 1. In the [Microsoft Entra admin center](https://entra.microsoft.com), register
    an app:
    - **Supported account types:** accounts in any organizational directory
-     (multitenant). The Fabric IQ server directs sign-in to the
+     (multitenant). The Microsoft Fabric IQ server directs sign-in to the
      `organizations` endpoint, which rejects single-tenant apps.
    - **Redirect URI (Web):** `https://claude.ai/api/mcp/auth_callback`
    - **API permissions:** delegated **Power BI Service** permissions
@@ -80,7 +80,7 @@ once; each user then does steps 3-5.
 2. Grant admin consent if your tenant blocks user consent (see
    [Admin consent](#admin-consent)).
 3. In Claude, open **Settings > Connectors** and select **Add custom connector**.
-4. Enter the name **Fabric IQ** and the MCP server URL. Under
+4. Enter the name **Microsoft Fabric IQ** and the MCP server URL. Under
    **Advanced settings**, enter the app's client ID and client secret, then
    select **Add**.
 5. Select **Connect**, sign in with your Microsoft Entra account, and enable the
@@ -93,7 +93,7 @@ On Team and Enterprise plans, an organization owner adds the connector under
 
 The ChatGPT plugin uses the portable Agent Plugins format: `plugin.json` and
 `mcp.json` at the plugin root, plus the shared `skills/` folder. It isn't in the
-ChatGPT plugin directory yet. Until it is, connect Fabric IQ as a custom MCP
+ChatGPT plugin directory yet. Until it is, connect Microsoft Fabric IQ as a custom MCP
 server or install the plugin locally.
 
 ### Connect as a custom MCP server (ChatGPT web)
@@ -106,10 +106,10 @@ client registration.
    use the redirect URI that ChatGPT shows when you add the server.
 2. In ChatGPT, open **Plugins** (chatgpt.com/plugins), select **+**, then
    **Add custom MCP server**.
-3. Enter the name **Fabric IQ** and the MCP server URL, choose **OAuth**, and
+3. Enter the name **Microsoft Fabric IQ** and the MCP server URL, choose **OAuth**, and
    enter the app's client ID and client secret.
 4. Select **Connect** and sign in with your Microsoft Entra account.
-5. In a new conversation, enable **Fabric IQ** from the tools menu and ask a
+5. In a new conversation, enable **Microsoft Fabric IQ** from the tools menu and ask a
    question.
 
 On Business and Enterprise workspaces, an admin may need to enable custom MCP
@@ -127,7 +127,7 @@ Use this to test the full plugin, including the skill, before it's published.
    - **Codex CLI:** `codex plugin marketplace add <path-to-your-local-clone>`
    - **ChatGPT desktop:** open the cloned repository as a project. ChatGPT reads
      `.agents/plugins/marketplace.json` from the repository root.
-3. Install **Fabric IQ** from the marketplace. When prompted, enter the app's
+3. Install **Microsoft Fabric IQ** from the marketplace. When prompted, enter the app's
    client secret (it's sent with `client_secret_post` and is never stored in
    this repository), then sign in with your Microsoft Entra account. If your
    client doesn't prompt for a secret, use
@@ -157,7 +157,7 @@ Before submitting at platform.openai.com/plugins:
 
 - Set the production ChatGPT Entra app client ID in `mcp.json`. The client
   secret is entered in the OpenAI portal, never in this repository.
-- Replace `assets/icon.png` and `assets/logo.png` with the final Fabric IQ
+- Replace `assets/icon.png` and `assets/logo.png` with the final Microsoft Fabric IQ
   artwork, and prepare screenshots.
 - Replace `REVIEW_WORKSPACE_ID` and `REVIEW_REPORT_ID` in the `review` test
   cases in `plugin.json` with items from the reviewer test workspace.
@@ -187,7 +187,7 @@ https://login.microsoftonline.com/<tenant-id>/adminconsent?client_id=<app-client
 |---|---|
 | **Admin approval required** at sign-in | Ask a tenant administrator to grant admin consent. |
 | The connector stops working after a while | Reconnect it in Claude (**Settings > Connectors**) or ChatGPT (**Plugins**), or re-run **Authenticate** from `/mcp` in Claude Code. |
-| A report or semantic model isn't found | Confirm you have at least read access to it in Microsoft Fabric. Fabric IQ only sees items you can already access. |
+| A report or semantic model isn't found | Confirm you have at least read access to it in Microsoft Fabric. Microsoft Fabric IQ only sees items you can already access. |
 | Answers omit some rows or columns | Row-level and object-level security on the semantic model still apply. |
 
 ## Repository layout
@@ -195,13 +195,13 @@ https://login.microsoftonline.com/<tenant-id>/adminconsent?client_id=<app-client
 ```
 .claude-plugin/marketplace.json   Claude marketplace manifest
 .agents/plugins/marketplace.json  ChatGPT and Codex marketplace manifest (local testing)
-plugins/fabriciq/                 The Fabric IQ plugin
+plugins/fabriciq/                 The Microsoft Fabric IQ plugin
   .claude-plugin/plugin.json      Claude plugin manifest
   .mcp.json                       Claude MCP server configuration
   plugin.json                     ChatGPT plugin manifest (Agent Plugins format)
   mcp.json                        ChatGPT MCP server and OAuth configuration
   assets/                         Icon and logo, shared by both hosts
-  skills/fabriciq/                Fabric IQ skill, shared by both hosts
+  skills/fabriciq/                Microsoft Fabric IQ skill, shared by both hosts
 scripts/build-chatgpt-zip.ps1     Builds the ChatGPT submission ZIP
 ```
 
